@@ -59,7 +59,7 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Carro{" + "numPlaca=" + numPlaca + ", tama\u00f1o=" + tamaño + ", numPuertas=" + numPuertas + ", Sucio=" + Sucio + '}';
+        return "Numero de placa= " + numPlaca + ", tama\u00f1o= " + tamaño + ", numPuertas= " + numPuertas + ", Sucio= " + Sucio ;
     }
     
 }
