@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author noelg
  */
-public class adminCarro {
+public class adminCarro  {
     private ArrayList<Carro> CarrosBin = new ArrayList();
     private File archivo = null;
     

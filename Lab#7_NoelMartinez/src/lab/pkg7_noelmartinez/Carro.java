@@ -5,19 +5,23 @@
  */
 package lab.pkg7_noelmartinez;
 
+import java.io.Serializable;
+
 /**
  *
  * @author noelg
  */
-public class Carro {
+public class Carro implements Serializable {
     private String numPlaca;
     private String tamaño;
     private String numPuertas;
     private String Sucio;
-
+    
+    private static final long SerialVersionUID=777L;
+    
     public Carro() {
     }
-
+    
     public Carro(String numPlaca, String tamaño, String numPuertas, String Sucio) {
         this.numPlaca = numPlaca;
         this.tamaño = tamaño;
@@ -59,7 +63,7 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Numero de placa= " + numPlaca + ", tama\u00f1o= " + tamaño + ", numPuertas= " + numPuertas + ", Sucio= " + Sucio ;
+        return "Numero de placa: " + numPlaca + ", tama\u00f1o: " + tamaño + ", Numero de puertas: " + numPuertas + ", Suciedad: " + Sucio ;
     }
     
 }

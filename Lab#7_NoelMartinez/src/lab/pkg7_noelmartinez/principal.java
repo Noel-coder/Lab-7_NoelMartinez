@@ -5,6 +5,7 @@
  */
 package lab.pkg7_noelmartinez;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,7 @@ public class principal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         bt_cliente.setEnabled(false);
         bt_empleado.setEnabled(false);
+        jm_opciones.setEnabled(false);
     }
 
     /**
@@ -72,17 +74,26 @@ public class principal extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jd_tablas = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cb_empleado1 = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        tabla1 = new javax.swing.JTable();
+        pg_1 = new javax.swing.JProgressBar();
+        jButton2 = new javax.swing.JButton();
+        cb_empleado2 = new javax.swing.JComboBox<>();
+        pg_2 = new javax.swing.JProgressBar();
+        cb_empleado3 = new javax.swing.JComboBox<>();
+        pg_3 = new javax.swing.JProgressBar();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tabla3 = new javax.swing.JTable();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tabla2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         bt_cliente = new javax.swing.JButton();
         bt_empleado = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jm_opciones = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -260,8 +271,8 @@ public class principal extends javax.swing.JFrame {
                         .addGroup(jd_clienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(sp_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addComponent(bt_crearCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
         );
@@ -363,45 +374,115 @@ public class principal extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Placa del Carro", "Tamaño", "Nivel de Suciedad", "Tiempo"
             }
-        ));
-        jScrollPane3.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tabla1);
+
+        jButton2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jButton2.setText("Iniciar Lavado");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        tabla3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Placa del Carro", "Tamaño", "Nivel de Suciedad", "Tiempo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(tabla3);
+
+        tabla2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Placa del Carro", "Tamaño", "Nivel de Suciedad", "Tiempo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(tabla2);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(218, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pg_3, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pg_1, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_empleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_empleado2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pg_2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_empleado3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(291, 291, 291)
+                        .addComponent(jButton2)))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addComponent(cb_empleado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pg_1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(cb_empleado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pg_2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cb_empleado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pg_3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(jButton2)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jd_tablasLayout = new javax.swing.GroupLayout(jd_tablas.getContentPane());
@@ -471,12 +552,17 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap(128, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Opciones");
+        jm_opciones.setText("Opciones");
 
         jMenuItem1.setText("Ver tablas");
-        jMenu1.add(jMenuItem1);
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jm_opciones.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jm_opciones);
 
         setJMenuBar(jMenuBar1);
 
@@ -508,7 +594,6 @@ public class principal extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(this, "Debe crear al menos un carro para habilitar esta opcion");
         //} else {
         this.setVisible(false);
-
         jd_cliente.setModal(true);
         jd_cliente.pack();
         jd_cliente.setLocationRelativeTo(this);
@@ -521,36 +606,16 @@ public class principal extends javax.swing.JFrame {
         String tamaño = cb_tamaño.getSelectedItem().toString();
         String puertas = sp_puertas.getValue().toString();
         String sucio = sp_suciedad.getValue().toString();
-        String nombreCliente = tf_nombre.getText();
-        String apellidoCliente = tf_apellido.getText();
-        String edadCliente = sp_edad.getValue().toString();
-        String nombreEmpleado = tf_nombreEmpleado.getText();
-        String apellidoEmpleado = tf_apellidoEmpleado.getText();
-        String edadEmpleado = sp_edadempleado.getValue().toString();
-        
+
         Carro c = new Carro(numplaca,
                 tamaño,
                 puertas,
                 sucio
         );
-        adminCarro ac = new adminCarro("./Carros.cbm");
+        adminCarro ac = new adminCarro("./Carros.leo");
         ac.cargarArchivo();
         ac.setCarro(c);
         ac.escribirArchivo();
-        
-        Cliente ce = new Cliente(nombreCliente,apellidoCliente,edadCliente);
-        
-        adminCliente acl = new adminCliente("./Clientes.cbm");
-        acl.cargarArchivo();
-        acl.setCliente(ce);
-        acl.escribirArchivo();
-        
-        Empleado e = new Empleado(nombreEmpleado, apellidoEmpleado , edadEmpleado);
-        
-        adminEmpleado ae = new adminEmpleado("./Empleados.cbm");
-        ae.cargarArchivo();
-        ae.setEmpleado(e);
-        ae.escribirArchivo();
 
         DefaultListModel modelo
                 = (DefaultListModel) jl_listacarro1.getModel();
@@ -560,43 +625,55 @@ public class principal extends javax.swing.JFrame {
                 puertas, sucio
         )
         );
-        jl_listacarro1.setModel(modelo);
-        tf_numPlaca.setText("");
-        sp_puertas.setValue(2);
-        cb_tamaño.setSelectedIndex(0);
-        sp_suciedad.setValue(5);
-        //JLIST2
-        tamaño = cb_tamaño.getSelectedItem().toString();
-        puertas = sp_puertas.getValue().toString();
-        sucio = sp_suciedad.getValue().toString();
-
-        DefaultListModel modelo2
-                = (DefaultListModel) jl_listaCarros2.getModel();
-
-        modelo2.addElement(new Carro(numplaca,
-                tamaño,
-                puertas, sucio
-        )
-        );
-        jl_listaCarros2.setModel(modelo2);
-        tf_numPlaca.setText("");
-        sp_puertas.setValue(2);
-        cb_tamaño.setSelectedIndex(0);
-        sp_suciedad.setValue(5);
         JOptionPane.showMessageDialog(this, "Carro Creado con exito!");
+        jl_listacarro1.setModel(modelo);
+        sp_puertas.setValue(2);
+        cb_tamaño.setSelectedIndex(0);
+        sp_suciedad.setValue(5);
         this.setVisible(true);
         jd_carro.setVisible(false);
         bt_cliente.setEnabled(true);
         bt_empleado.setEnabled(true);
+        jm_opciones.setEnabled(true);
+
     }//GEN-LAST:event_bt_crearCarroMouseClicked
 
     private void bt_crearEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_crearEmpleadoMouseClicked
+        String nombreEmpleado = tf_nombreEmpleado.getText();
+        String apellidoEmpleado = tf_apellidoEmpleado.getText();
+        String edadEmpleado = sp_edadempleado.getValue().toString();
+
+        Empleado e = new Empleado(nombreEmpleado, apellidoEmpleado, edadEmpleado);
+
+        adminEmpleado ae = new adminEmpleado("./Empleados.leo");
+        ae.cargarArchivo();
+        ae.setEmpleado(e);
+        ae.escribirArchivo();
+
+        Empleado a = new Empleado(nombreEmpleado, apellidoEmpleado, edadEmpleado);
+        DefaultComboBoxModel modelo1 = (DefaultComboBoxModel) cb_empleado1.getModel();
+        modelo1.addElement(a);
+        cb_empleado1.setModel(modelo1);
+
+        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_empleado2.getModel();
+        modelo2.addElement(a);
+        cb_empleado2.setModel(modelo2);
+
+        DefaultComboBoxModel modelo3 = (DefaultComboBoxModel) cb_empleado3.getModel();
+        modelo3.addElement(a);
+        cb_empleado3.setModel(modelo3);
+
         jd_empleado.setModal(false);
         jd_empleado.pack();
         jd_empleado.setVisible(false);
 
         this.setVisible(true);
-        JOptionPane.showMessageDialog(this, "Empleado ha sido creado con exito!");
+        contEmpleados++;
+        if (contEmpleados > 3) {
+            JOptionPane.showMessageDialog(this, "El maximo de empleados es 3");
+        } else {
+            JOptionPane.showMessageDialog(this, "Empleado ha sido creado con exito!");
+        }
 
     }//GEN-LAST:event_bt_crearEmpleadoMouseClicked
 
@@ -610,13 +687,72 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_empleadoMouseClicked
 
     private void bt_crearClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_crearClienteMouseClicked
-        jd_cliente.setModal(false);
-        jd_cliente.pack();
-        jd_cliente.setVisible(false);
+        String nombreCliente = tf_nombre.getText();
+        String apellidoCliente = tf_apellido.getText();
+        String edadCliente = sp_edad.getValue().toString();
 
-        this.setVisible(true);
-        JOptionPane.showMessageDialog(this, "Cliente Creado con exito!");
+        Cliente ce = new Cliente(nombreCliente, apellidoCliente, edadCliente);
+
+        adminCliente acl = new adminCliente("./Clientes.leo");
+        acl.cargarArchivo();
+        acl.setCliente(ce);
+        acl.escribirArchivo();
+        //JLIST2
+        String tamaño = cb_tamaño.getSelectedItem().toString();
+        String puertas = sp_puertas.getValue().toString();
+        String sucio = sp_suciedad.getValue().toString();
+        String numplaca = tf_numPlaca.getText();
+        if (jl_listacarro1.getSelectedIndex() >= 0) {
+
+            DefaultListModel modelo1
+                    = (DefaultListModel) jl_listaCarros2.getModel();
+
+            modelo1.addElement(new Carro(numplaca,
+                    tamaño,
+                    puertas, sucio
+            )
+            );
+            jl_listaCarros2.setModel(modelo1);
+            JOptionPane.showMessageDialog(this, "Cliente fue agregado con exito al apartado de empleados");
+
+            jd_cliente.setModal(false);
+            jd_cliente.pack();
+            jd_cliente.setVisible(false);
+            this.setVisible(true);
+        }
     }//GEN-LAST:event_bt_crearClienteMouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        jd_tablas.setModal(true);
+        jd_tablas.pack();
+        jd_tablas.setLocationRelativeTo(this);
+        jd_tablas.setVisible(true);
+
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        int tamaño = cb_tamaño.getSelectedIndex();
+        switch (tamaño) {
+            case 0:
+                double mult1 = Integer.parseInt(sp_suciedad.getValue().toString())*1.5;
+                pg1 = new Hilo1(pg_1, mult1);
+                pg1.start();
+                break;
+            case 1:
+                double mult2 = Integer.parseInt(sp_suciedad.getValue().toString())*1.8;
+                pg2 = new Hilo1(pg_2, mult2);
+                pg2.start();
+                break;
+            case 2:
+                double mult3 = Integer.parseInt(sp_suciedad.getValue().toString())*2.2;
+                pg3 = new Hilo1(pg_3, mult3);
+                pg3.start();
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -652,16 +788,20 @@ public class principal extends javax.swing.JFrame {
             }
         });
     }
-
+    Hilo1 pg1,pg2,pg3;
+    int contEmpleados = 0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cliente;
     private javax.swing.JButton bt_crearCarro;
     private javax.swing.JButton bt_crearCliente;
     private javax.swing.JButton bt_crearEmpleado;
     private javax.swing.JButton bt_empleado;
+    private javax.swing.JComboBox<String> cb_empleado1;
+    private javax.swing.JComboBox<String> cb_empleado2;
+    private javax.swing.JComboBox<String> cb_empleado3;
     private javax.swing.JComboBox<String> cb_tamaño;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -678,28 +818,34 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JDialog jd_carro;
     private javax.swing.JDialog jd_cliente;
     private javax.swing.JDialog jd_empleado;
     private javax.swing.JDialog jd_tablas;
     private javax.swing.JList<String> jl_listaCarros2;
     private javax.swing.JList<String> jl_listacarro1;
+    private javax.swing.JMenu jm_opciones;
+    private javax.swing.JProgressBar pg_1;
+    private javax.swing.JProgressBar pg_2;
+    private javax.swing.JProgressBar pg_3;
     private javax.swing.JSpinner sp_edad;
     private javax.swing.JSpinner sp_edadempleado;
     private javax.swing.JSpinner sp_puertas;
     private javax.swing.JSpinner sp_suciedad;
+    private javax.swing.JTable tabla1;
+    private javax.swing.JTable tabla2;
+    private javax.swing.JTable tabla3;
     private javax.swing.JTextField tf_apellido;
     private javax.swing.JTextField tf_apellidoEmpleado;
     private javax.swing.JTextField tf_nombre;
